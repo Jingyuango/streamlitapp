@@ -12,8 +12,9 @@ def fsplit_fun():
         
 def fmerge_fun(files):
     for i in files:
-        merge = Merge(path+"/"+i, path, i+"_h.h5")
-        merge.merge()
+        if not os.path.exists(path+"/"+i+".pkl"):
+            merge = Merge(path+"/"+i, path, i+"_h.h5")
+            merge.merge()
 
-fsplit_fun()
+#fsplit_fun()
 #fmerge_fun(["model1"])
