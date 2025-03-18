@@ -3,7 +3,10 @@ import joblib
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
+import file_split_merge
 
+path = os.getcwd().replace("\\", "/")
 
 # 页面设置
 st.set_page_config(
@@ -12,8 +15,8 @@ st.set_page_config(
     layout="wide"
 )
 
-# 模型路径
-import os
+file_name = ["C综合", "H综合", "O综合", "N综合", "FC综合", "vm综合", "ASH综合", "HHV综合", "EY综合"]
+file_split_merge.fmerge_fun(file_name)    
 
 MODEL_PATHS = {
     'C': os.path.join(os.path.dirname(__file__), 'C综合.pkl'),
