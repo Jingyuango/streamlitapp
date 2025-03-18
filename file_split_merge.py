@@ -13,7 +13,7 @@ def fsplit_fun():
 def fmerge_fun(files):
     for i in files:
         if not os.path.exists(path+"/"+i+".pkl"):
-            merge = Merge(path+"/"+i, path, i+"_h.h5")
+            merge = Merge(path+"/"+i, path, i+".pkl")
             merge.merge()
 
 #fsplit_fun()
